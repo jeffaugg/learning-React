@@ -5,9 +5,9 @@ import Header from "./Header";
 
 function App() {
     const [posts, setPosts] = useState([
-        { id: Math.random(), title: 'title01', subtitulo: 'sub01', likes: 20 },
-        { id: Math.random(), title: 'title02', subtitulo: 'sub02', likes: 10 },
-        { id: Math.random(), title: 'title03', subtitulo: 'sub03', likes: 30 },
+        { id: Math.random(), title: 'title01', subtitulo: 'sub01', likes: 20, read: false},
+        { id: Math.random(), title: 'title02', subtitulo: 'sub02', likes: 10, read: true},
+        { id: Math.random(), title: 'title03', subtitulo: 'sub03', likes: 30, read: false},
     ]);
 
     
@@ -45,9 +45,8 @@ function App() {
             {posts.map((post) => (
                 <Post
                     key={post.id}
-                    likes={post.likes}
                     onRemove={handleRemovePost}
-                    post={post}
+                     post={post}
                 />
             ))}
 
